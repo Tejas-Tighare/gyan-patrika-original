@@ -1,0 +1,35 @@
+diff --git a/node_modules/pdf-parse/index.js b/node_modules/pdf-parse/index.js
+index e9fc367..6070dbd 100644
+--- a/node_modules/pdf-parse/index.js
++++ b/node_modules/pdf-parse/index.js
+@@ -1,16 +1,17 @@
++// node_modules/pdf-parse/index.js
+ const Fs = require('fs');
+ const Pdf = require('./lib/pdf-parse.js');
+ 
+ module.exports = Pdf;
+ 
+-let isDebugMode = !module.parent; 
++// Disable debug mode to prevent test code execution
++// let isDebugMode = !module.parent;
+ 
+-//process.env.AUTO_KENT_DEBUG
++// process.env.AUTO_KENT_DEBUG
+ 
+-
+-//for testing purpose
++// Removed test code to avoid ENOENT error
++/*
+ if (isDebugMode) {
+-
+     let PDF_FILE = './test/data/05-versions-space.pdf';
+     let dataBuffer = Fs.readFileSync(PDF_FILE);
+     Pdf(dataBuffer).then(function(data) {
+@@ -22,5 +23,5 @@ if (isDebugMode) {
+     }).catch(function(err) {
+         debugger;
+     });
+-
+ }
++*/
+\ No newline at end of file
